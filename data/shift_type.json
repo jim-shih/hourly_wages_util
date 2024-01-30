@@ -1,0 +1,154 @@
+{
+    "X": {
+        "start_time": "-",
+        "end_time": "-"
+    },
+    "A01": {
+        "start_time": "08:30",
+        "end_time": "17:30"
+    },
+    "A02": {
+        "start_time": "09:30",
+        "end_time": "18:00"
+    },
+    "A11": {
+        "start_time": "10:00",
+        "end_time": "18:00"
+    },
+    "A03": {
+        "start_time": "10:30",
+        "end_time": "19:00"
+    },
+    "A27": {
+        "start_time": "11:30",
+        "end_time": "20:00"
+    },
+    "A48": {
+        "start_time": "09:00",
+        "end_time": "17:30"
+    },
+    "A49": {
+        "start_time": "11:00",
+        "end_time": "19:30"
+    },
+    "A58": {
+        "start_time": "10:00",
+        "end_time": "18:30"
+    },
+    "A60": {
+        "start_time": "08:00",
+        "end_time": "17:00"
+    },
+    "A63": {
+        "start_time": "10:00",
+        "end_time": "19:00"
+    },
+    "B02": {
+        "start_time": "13:00",
+        "end_time": "21:30"
+    },
+    "B03": {
+        "start_time": "13:30",
+        "end_time": "22:00"
+    },
+    "B07": {
+        "start_time": "12:30",
+        "end_time": "21:00"
+    },
+    "B12": {
+        "start_time": "14:00",
+        "end_time": "22:30"
+    },
+    "CA04": {
+        "start_time": "10:00",
+        "end_time": "17:00"
+    },
+    "CA05": {
+        "start_time": "09:30",
+        "end_time": "17:30"
+    },
+    "CA09": {
+        "start_time": "10:30",
+        "end_time": "16:30"
+    },
+    "CA12": {
+        "start_time": "10:30",
+        "end_time": "16:00"
+    },
+    "CD07": {
+        "start_time": "08:30",
+        "end_time": "18:30"
+    },
+    "CD10": {
+        "start_time": "10:00",
+        "end_time": "20:30"
+    },
+    "C05": {
+        "start_time": "09:30",
+        "end_time": "21:30"
+    },
+    "C07": {
+        "start_time": "09:30",
+        "end_time": "21:00"
+    },
+    "C08": {
+        "start_time": "10:00",
+        "end_time": "21:30"
+    },
+    "C10": {
+        "start_time": "10:30",
+        "end_time": "22:00"
+    },
+    "C11": {
+        "start_time": "09:00",
+        "end_time": "20:30"
+    },
+    "C12": {
+        "start_time": "08:00",
+        "end_time": "19:30"
+    },
+    "C14": {
+        "start_time": "08:00",
+        "end_time": "18:30"
+    },
+    "C15": {
+        "start_time": "09:00",
+        "end_time": "19:30"
+    },
+    "C16": {
+        "start_time": "09:30",
+        "end_time": "20:00"
+    },
+    "C17": {
+        "start_time": "10:00",
+        "end_time": "20:30"
+    },
+    "C18": {
+        "start_time": "10:30",
+        "end_time": "21:00"
+    },
+    "C19": {
+        "start_time": "11:00",
+        "end_time": "21:30"
+    },
+    "C20": {
+        "start_time": "11:30",
+        "end_time": "22:00"
+    },
+    "C22": {
+        "start_time": "09:00",
+        "end_time": "21:00"
+    },
+    "C29": {
+        "start_time": "10:30",
+        "end_time": "19:30"
+    },
+    "C32": {
+        "start_time": "09:00",
+        "end_time": "19:00"
+    },
+    "C34": {
+        "start_time": "09:30",
+        "end_time": "19:00"
+    }
+}
