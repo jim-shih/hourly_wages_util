@@ -23,8 +23,7 @@ class ShiftCalculator:
         return data
 
     @staticmethod
-    def _calculate_shift_duration(start_time: str,
-                                  end_time: str) -> timedelta:
+    def _calculate_shift_duration(start_time: str, end_time: str) -> timedelta:
         start = datetime.strptime(start_time, "%H:%M")
         end = datetime.strptime(end_time, "%H:%M")
         duration = end - start

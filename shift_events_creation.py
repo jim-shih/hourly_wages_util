@@ -2,7 +2,8 @@
 import json
 from datetime import datetime
 
-from utils import APIConnector
+from utils.google_calendar_api import APIConnector
+from utils.shift_calculator import ShiftCalculator
 
 SHIFT_TYPE_PATH = "./data/shift_type.json"
 SHIFT_TIME_PATH = "./data/fab_shift.json"
@@ -67,6 +68,9 @@ def main():
     with APIConnector() as service:
         shift_type, shift_time = load_data(SHIFT_TYPE_PATH, SHIFT_TIME_PATH)
         process_shifts(service, shift_type, shift_time)
+
+    calculator = ShiftCalculator(SHIFT_TYPE_PATH, SHIFT_TIME_PATH, 190)
+    calculator.print_results()
 
 
 if __name__ == "__main__":

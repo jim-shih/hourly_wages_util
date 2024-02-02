@@ -34,7 +34,7 @@ class APIConnector:
         service = self._build_service(credentials)
         return service
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, type, value, traceback):  # noqa
         pass
 
     def _load_credentials(self):
