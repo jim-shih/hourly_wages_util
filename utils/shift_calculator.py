@@ -40,7 +40,16 @@ class ShiftCalculator:
     def __post_init__(self) -> None:
         self.shift_type = self._load_json_file(self.shift_type_file)
         self.shifts = self._load_json_file(self.shift_file)
+        self.shifts = {
+            datetime.strptime(date, "%Y-%m-%d").date(): shift
+            for date, shift in self.shifts.items()
+        }
+
         self.holidays = self._load_json_file(self.holiday_file)
+        self.holidays = [
+            datetime.strptime(holiday, "%Y-%m-%d").date()
+            for holiday in self.holidays.keys()
+        ]
 
     @staticmethod
     def _load_json_file(file_path: Path) -> Dict[str, Any]:
@@ -81,6 +90,7 @@ class ShiftCalculator:
             total_working_time += duration
 
             if date in self.holidays:
+                print(f"Date: {date} is a holiday")
                 total_wage += duration.total_seconds(
                 ) / 3600 * self.hourly_rate * 2
             else:
@@ -100,6 +110,6 @@ class ShiftCalculator:
 
 if __name__ == "__main__":
     calculator = ShiftCalculator(Path("./data/shift_type.json"),
-                                 Path("./data/jan_shift.json"),
+                                 Path("./data/fab_shift.json"),
                                  Path("./data/holiday.json"), 190)
     print(calculator)
