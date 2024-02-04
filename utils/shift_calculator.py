@@ -18,14 +18,26 @@ class ShiftCalculator:
     HOLIDAY_RATE = 2
     HOURLY_RATE = 190
 
-    def __init__(self, shift_type_file: Path, shift_file: Path, # noqa
-                 holiday_file: Path):  # noqa
+    def __init__(
+            self,
+            shift_type_file: Path,
+            shift_file: Path,  # noqa
+            holiday_file: Path):  # noqa
         self.shift_type_file = shift_type_file
         self.shift_file = shift_file
         self.holiday_file = holiday_file
         self.shift_type = self._load_json_file(self.shift_type_file)
         self.shifts = self._load_json_file(self.shift_file)
+        self.shifts = {
+            datetime.strptime(date, "%Y-%m-%d").date(): shift
+            for date, shift in self.shifts.items()
+        }
+
         self.holidays = self._load_json_file(self.holiday_file)
+        self.holidays = [
+            datetime.strptime(holiday, "%Y-%m-%d").date()
+            for holiday in self.holidays.keys()
+        ]
 
     @staticmethod
     def _load_json_file(file_path: Path) -> Dict[str, Any]:
@@ -73,6 +85,7 @@ class ShiftCalculator:
             total_working_time += duration
 
             if date in self.holidays:
+                print(f"Date: {date} is a holiday")
                 total_wage += duration.total_seconds(
                 ) / 3600 * self.HOURLY_RATE * self.HOLIDAY_RATE
             else:
