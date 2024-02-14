@@ -110,6 +110,6 @@ class ShiftCalculator:
 
 if __name__ == "__main__":
     calculator = ShiftCalculator(Path("./data/shift_type.json"),
-                                 Path("./data/fab_shift.json"),
+                                 Path("./data/feb_shift.json"),
                                  Path("./data/holiday.json"), 190)
     print(calculator)
