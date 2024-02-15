@@ -1,0 +1,38 @@
+{
+    "2024-01-01": {
+        "weekday": "Monday",
+        "note": "開國紀念日"
+    },
+    "2024-02-08": {
+        "weekday": "Thursday",
+        "note": "小年夜"
+    },
+    "2024-02-09": {
+        "weekday": "Friday",
+        "note": "農曆除夕"
+    },
+    "2024-02-12": {
+        "weekday": "Monday",
+        "note": "春節"
+    },
+    "2024-02-28": {
+        "weekday": "Wednesday",
+        "note": "和平紀念日"
+    },
+    "2024-04-04": {
+        "weekday": "Thursday",
+        "note": "兒童節及民族掃墓節"
+    },
+    "2024-06-10": {
+        "weekday": "Monday",
+        "note": "端午節"
+    },
+    "2024-09-17": {
+        "weekday": "Tuesday",
+        "note": "中秋節"
+    },
+    "2024-10-10": {
+        "weekday": "Thursday",
+        "note": "國慶日"
+    }
+}
