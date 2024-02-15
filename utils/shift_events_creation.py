@@ -54,7 +54,8 @@ def process_shifts(service, shift_type: dict, shift_time: dict):
 
         start_time = datetime.strptime(f'{_date} {start_time_str}',
                                        '%Y-%m-%d %H:%M')
-        end_time = datetime.strptime(f'{_date} {end_time_str}', '%Y-%m-%d %H:%M')
+        end_time = datetime.strptime(f'{_date} {end_time_str}',
+                                     '%Y-%m-%d %H:%M')
 
         summary = f"Workday {shift} {count+1}th"
         description = f"Shift: {shift}, Location: Taipei101"
