@@ -4,10 +4,9 @@ from datetime import datetime
 
 from google_calendar_api import APIConnector
 from shift_calculator import ShiftCalculator
-from pathlib import Path
 
-SHIFT_TYPE_PATH = Path("./data/shift_type.json")
-SHIFT_TIME_PATH = Path("./data/feb_shift.json")
+SHIFT_TYPE_PATH = "./data/shift_type.json"
+SHIFT_TIME_PATH = "./data/fab_shift.json"
 
 
 def load_data(shift_type_path: str = SHIFT_TYPE_PATH,
@@ -44,7 +43,7 @@ def create_event(service, start_time: datetime, end_time: datetime,
 
 def process_shifts(service, shift_type: dict, shift_time: dict):
     count = 0
-    for _date, shift in shift_time.items():
+    for day, shift in shift_time.items():
         if shift == "X":
             count = 0
             continue
@@ -52,9 +51,9 @@ def process_shifts(service, shift_type: dict, shift_time: dict):
         start_time_str = shift_type[shift]["start_time"]
         end_time_str = shift_type[shift]["end_time"]
 
-        start_time = datetime.strptime(f'{_date} {start_time_str}',
+        start_time = datetime.strptime(f'2024-02-{day} {start_time_str}',
                                        '%Y-%m-%d %H:%M')
-        end_time = datetime.strptime(f'{_date} {end_time_str}',
+        end_time = datetime.strptime(f'2024-02-{day} {end_time_str}',
                                      '%Y-%m-%d %H:%M')
 
         summary = f"Workday {shift} {count+1}th"
