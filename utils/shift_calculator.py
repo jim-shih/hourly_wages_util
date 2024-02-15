@@ -28,16 +28,7 @@ class ShiftCalculator:
         self.holiday_file = holiday_file
         self.shift_type = self._load_json_file(self.shift_type_file)
         self.shifts = self._load_json_file(self.shift_file)
-        self.shifts = {
-            datetime.strptime(date, "%Y-%m-%d").date(): shift
-            for date, shift in self.shifts.items()
-        }
-
         self.holidays = self._load_json_file(self.holiday_file)
-        self.holidays = [
-            datetime.strptime(holiday, "%Y-%m-%d").date()
-            for holiday in self.holidays.keys()
-        ]
 
     @staticmethod
     def _load_json_file(file_path: Path) -> Dict[str, Any]:
@@ -104,7 +95,9 @@ class ShiftCalculator:
 
 
 if __name__ == "__main__":
-    calculator = ShiftCalculator(Path("./data/shift_type.json"),
-                                 Path("./data/feb_shift.json"),
-                                 Path("./data/holiday.json"), 190)
+    shift_type_file = Path("./data/shift_type.json")
+    shift_file = Path("./data/jan_shift.json")
+    holiday_file = Path("./data/holiday.json")
+
+    calculator = ShiftCalculator(shift_type_file, shift_file, holiday_file)
     print(calculator)
