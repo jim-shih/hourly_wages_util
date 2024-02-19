@@ -2,3 +2,7 @@ google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 chardet
+opencv-python~=4.8.1.78
+numpy~=1.26.1
+pandas~=1.5.3
+easyocr~=1.7.1
