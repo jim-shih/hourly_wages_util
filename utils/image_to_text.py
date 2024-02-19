@@ -1,9 +1,10 @@
-from typing import List, Any, Sequence
+from pathlib import Path
+from typing import Any, List, Sequence
+
 import cv2
+import easyocr
 import numpy as np
 import pandas as pd
-import easyocr
-from pathlib import Path
 
 
 class ImageProcessor:
