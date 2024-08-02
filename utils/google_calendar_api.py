@@ -21,14 +21,14 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = ["https://www.googleapis.com/auth/calendar"
-          ]  # the current scope is for read and write
+SCOPES = [
+    "https://www.googleapis.com/auth/calendar"
+]  # the current scope is for read and write
 TOKEN_PATH = "credentials/token.json"
 CREDENTIALS_PATH = "credentials/credentials.json"
 
 
 class APIConnector:
-
     def __enter__(self):
         credentials = self._load_credentials()
         service = self._build_service(credentials)
@@ -39,8 +39,7 @@ class APIConnector:
 
     def _load_credentials(self):
         if os.path.exists(TOKEN_PATH):
-            credentials = Credentials.from_authorized_user_file(
-                TOKEN_PATH, SCOPES)
+            credentials = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
         else:
             credentials = self._get_credentials_from_user()
 
@@ -51,8 +50,7 @@ class APIConnector:
 
     @staticmethod
     def _get_credentials_from_user():
-        flow = InstalledAppFlow.from_client_secrets_file(
-            CREDENTIALS_PATH, SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_PATH, SCOPES)
         credentials = flow.run_local_server(port=0)
         with open(TOKEN_PATH, "w") as token:
             token.write(credentials.to_json())
