@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "hourly-wages-util"
+version = "0.1.0"
+description = ""
+authors = ["Jimshih <m11001107@ntust.edu.tw>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+google-api-python-client = "^2.139.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.1"
+chardet = "^5.2.0"
+opencv-python = ">=4.8.1.78,<4.9.0.0"
+numpy = ">=1.26.1,<1.27.0"
+easyocr = ">=1.7.1,<1.8.0"
+jupyter = "^1.0.0"
+notebook = "^7.2.1"
+pandas = "^2.2.2"
+pre-commit = "^3.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
