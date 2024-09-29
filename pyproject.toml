@@ -1,3 +1,16 @@
+[tool.yapf]
+based_on_style = "google"
+column_limit = 79
+indent_width = 4
+spaces_around_default_or_named_assign = true
+spaces_around_power_operator = true
+spaces_before_comment = 2
+split_before_logical_operator = true
+
+[tool.isort]
+profile = "hug"
+src_paths = ["isort", "test"]
+
 [tool.poetry]
 name = "hourly-wages-util"
 version = "0.1.0"
@@ -18,6 +31,9 @@ jupyter = "^1.0.0"
 notebook = "^7.2.1"
 pandas = "^2.2.2"
 pre-commit = "^3.8.0"
+isort = "^5.13.2"
+prettier = "^0.0.7"
+yapf = "^0.40.2"
 
 
 [build-system]
