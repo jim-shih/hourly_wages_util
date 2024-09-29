@@ -147,11 +147,27 @@ class ShiftCalculator:
 
 
 if __name__ == "__main__":
-    month = 7
-    short_month_name = datetime(2024, month, 1).strftime("%b").lower()
+    import sys
 
+    if len(sys.argv) != 2:
+        print("Usage: python shift_calculator.py yyyy-mm")
+        sys.exit(1)
+
+    try:
+        year, month = map(int, sys.argv[1].split("-"))
+        date_arg = sys.argv[1] if month >= 10 else f"{year}-0{month}"
+        if not (1 <= month <= 12):
+            raise ValueError("Month must be between 1 and 12")
+    except ValueError:
+        print("Invalid date format. Please use yyyy-mm (e.g., 2024-09)")
+        sys.exit(1)
     shift_type_file = Path("./data/shift_type.json")
-    shift_file = Path(f"./data/{short_month_name}_shift.json")
+
+    shift_file = Path(f"./data/{date_arg}_shift.json")
+
+    if not shift_file.exists():
+        print("Error: This month's shift data does not exist.")
+        sys.exit(1)
     holiday_file = Path("./data/holiday.json")
     data_reader = ShiftDataReader(shift_type_file, shift_file, holiday_file)
     calculator = ShiftCalculator(data_reader)
